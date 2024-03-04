@@ -2,4 +2,4 @@
 const NextConfig = {
   output: "export",
 };
-module.exports=nextConfig;
+module.exports=NextConfig;
