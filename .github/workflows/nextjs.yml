@@ -36,6 +36,7 @@ jobs:
       NEXT_PUBLIC_MESSAGINGSENDERID: ${{secrets.NEXT_PUBLIC_MESSAGINGSENDERID}}
       NEXT_PUBLIC_APPID: ${{secrets.NEXT_PUBLIC_APPID}}
       NEXT_PUBLIC_MEASUREMENTID: ${{secrets.NEXT_PUBLIC_MEASUREMENTID}}
+      NEXT_PUBLIC_TEST: ${{secrets.NEXT_PUBLIC_TEST}}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -83,6 +84,7 @@ jobs:
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
       - name: Build with Next.js
         run: |
+          echo "${{secrets.NEXT_PUBLIC_TEST}}"
           touch .env.local
           echo NEXT_PUBLIC_API= ${{secrets.NEXT_PUBLIC_API}} >> .env.local
           echo NEXT_PUBLIC_AUTHDOMAIN= ${{secrets.NEXT_PUBLIC_AUTHDOMAIN}} >> .env.local
