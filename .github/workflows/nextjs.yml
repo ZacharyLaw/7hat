@@ -96,6 +96,7 @@ jobs:
           echo NEXT_PUBLIC_MEASUREMENTID= ${{secrets.NEXT_PUBLIC_MEASUREMENTID}} >> .env.local
           ${{ steps.detect-package-manager.outputs.runner }} next build
       - name: Upload artifact
+        if: always()
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./out
@@ -109,5 +110,6 @@ jobs:
     needs: build
     steps:
       - name: Deploy to GitHub Pages
+        if: always()
         id: deployment
         uses: actions/deploy-pages@v4
