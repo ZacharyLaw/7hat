@@ -12,8 +12,4 @@ module.exports = {
   output:"export",
   assetPrefix: assetPrefix,
   basePath: basePath,
-  images: {
-    loader: 'imgix',
-    path: 'the "domain" of your Imigix source',
-  },
 }
