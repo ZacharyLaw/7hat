@@ -21,7 +21,9 @@ import { v4 as uuidv4 } from 'uuid';
   const [loading, setLoading] = useState(false);
   const [msg, setMsg] = useState('');
   const [chats, setChat] = useState([]);
-
+  const handleKeyPress = (e) => {
+    if (e.key==='Enter'){addMsg();setMsg('');}
+  };
   useEffect(() => {
     const q = query(
       colletionRef,
@@ -47,30 +49,20 @@ import { v4 as uuidv4 } from 'uuid';
       lastUpdate: serverTimestamp(),
     };
     try {
-      const chatRef = doc(colletionRef, newChat.id);
-      await setDoc(chatRef, newChat);
-    } catch (error) {
-      console.error(error);
-    }
+      await setDoc(doc(colletionRef, newChat.id), newChat);
+    } catch (error) {console.error(error);}
   }//addChat
-
-
-
   return (
     <aside>
-         {chats.map((chat)=>(
-          <h2 className="chat" key={chat.id}>{chat.msg}</h2>
-      ))}
+{chats.sort((a,b)=>a.createdAt - b.createdAt).map(chat => (
+  <h2 className="chat" key={chat.id}>{chat.msg}</h2>))}
       <div className="inputBox">
-        <input
-          type="text"
-          value={msg}
-          onChange={(e) => setMsg(e.target.value)}
-          placeholder="Msg"
-        />
-        <button onClick={() => addMsg()}>Submit</button>
+        <input type="text" value={msg}
+          onChange={e=>setMsg(e.target.value)}
+          onKeyDown={handleKeyPress}
+          placeholder="Msg"/>
+        <button onClick={()=>addMsg()}>Submit</button>
       </div>
-   
     </aside>
   )
 }
