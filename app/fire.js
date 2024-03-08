@@ -56,6 +56,7 @@ import { v4 as uuidv4 } from 'uuid';
     <aside>
 {chats.sort((a,b)=>a.createdAt - b.createdAt).map(chat => (
   <h2 className="chat" key={chat.id}>{chat.msg}</h2>))}
+  PWA
       <div className="inputBox">
         <input type="text" value={msg}
           onChange={e=>setMsg(e.target.value)}
