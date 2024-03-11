@@ -110,6 +110,5 @@ jobs:
     needs: build
     steps:
       - name: Deploy to GitHub Pages
-        if: always()
         id: deployment
         uses: actions/deploy-pages@v4
