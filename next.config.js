@@ -8,7 +8,6 @@ if (isGithubActions) {
   basePath = `/${repo}`
 }
 module.exports = {
-  experimental: false,
   output: "export",
   assetPrefix: assetPrefix,
   basePath: "/7hat",
