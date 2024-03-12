@@ -1,12 +1,13 @@
 {
   "name": "Zachary Chat",
   "short_name": "Zachary Chat",
-  "theme_color": "#ffffff",
-  "background_color": "#004740",
+  "theme_color": "#000000",
+  "background_color": "#000000",
   "display": "fullscreen",
   "orientation": "portrait",
   "scope": "/",
-  "start_url": "/",
+  "_comment": "Repo Name here!?",
+  "start_url": "/7hat",
   "icons": [
     {
       "src": "icon.png",
