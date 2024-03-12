@@ -9,7 +9,7 @@ export const metadata={
   "description": "Description",
   "keywords": "Keywords",
   "title": "Zachary Chat",
-  "manifest": "7hat/manifest.json", // must put repo in front!!!
+  "manifest": "manifest.json", // must put repo in front!!!
   "apple-touch-icon": "/public/icon.png",
 }
 export const viewport = {
