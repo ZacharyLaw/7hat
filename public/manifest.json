@@ -5,9 +5,9 @@
   "background_color": "#000000",
   "display": "fullscreen",
   "orientation": "portrait",
-  "scope": "/",
+  "scope": ".",
   "_comment": "Repo Name here!?",
-  "start_url": "/7hat",
+  "start_url": "./",
   "icons": [
     {
       "src": "icon.png",
