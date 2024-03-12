@@ -9,7 +9,7 @@ if (isGithubActions) {
 }
 module.exports = {
   output: "export",
-  assetPrefix: assetPrefix,
+  assetPrefix: "/7hat/",
   basePath: "/7hat",
   images: {
     unoptimized: true
