@@ -94,11 +94,10 @@ jobs:
           echo NEXT_PUBLIC_APPID= ${{secrets.NEXT_PUBLIC_APPID}}>>.env.local
           echo NEXT_PUBLIC_MEASUREMENTID= ${{secrets.NEXT_PUBLIC_MEASUREMENTID}} >> .env.local
           ${{ steps.detect-package-manager.outputs.runner }} next build
-      - name: Upload artifact
-        if: always()
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: ./out
+      #- name: Upload artifact
+      #  uses: actions/upload-pages-artifact@v3
+      #  with:
+      #    path: ./out
 
   # Deployment job
   deploy:
