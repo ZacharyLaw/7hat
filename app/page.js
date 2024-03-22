@@ -8,7 +8,6 @@ export default function Home() {
   return (
     <main className={styles.main}>
       <Fire />
-      <a href="/api/auth/login">Login</a>
     </main>
   );
 }
