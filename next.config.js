@@ -6,7 +6,7 @@ if (process.env.GITHUB_ACTIONS || false) {
   basePath = `/${repo}`
 }
 module.exports = {
-  output: "export",
+  //output: "export",
   assetPrefix: assetPrefix,
   basePath:basePath,
   images: {unoptimized: true},

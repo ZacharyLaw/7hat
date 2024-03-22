@@ -1,17 +1,14 @@
 import React from "react";
-import Image from "next/image";
+
 import styles from "./page.module.css";
 import Fire from './fire';
-
-/** 
- import Auth from './Auth';
- <Author />
-*/
+import { Button } from "@/components/ui/button"
 
 export default function Home() {
   return (
     <main className={styles.main}>
       <Fire />
+      <a href="/api/auth/login">Login</a>
     </main>
   );
 }

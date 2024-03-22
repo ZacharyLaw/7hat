@@ -16,5 +16,18 @@
       "purpose": "maskable any"
     }
   ],
-  "splash_pages": null
+  "splash_pages": null,
+  "description": "A chat application for seamless communication.",
+  "app_id": "com.example.chat",
+  "launch_handler": {"enabled": true},
+  "screenshots": [
+    {"src": "ss.png","sizes": "1920x1280","type": "image/png"}
+  ],
+  "categories": ["Communication","Social"],
+  "dir": "ltr",
+  "iarc_rating_id": "E",
+  "lang": "en",
+  "prefer_related_applications": false,
+  "related_applications": [],
+  "scope_extensions": []
 }

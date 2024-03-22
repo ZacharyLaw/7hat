@@ -1,7 +1,11 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { cn } from "@/lib/utils"
+
+import { UserProvider } from '@auth0/nextjs-auth0/client';
 import React from 'react';
 const inter = Inter({ subsets: ["latin"] });
+
 export const metadata={
   "charset": "utf-8",
   "httpEquiv": "X-UA-Compatible",
@@ -14,11 +18,15 @@ export const metadata={
 }
 export const viewport = {
   themeColor: [
-    { media: '(prefers-color-scheme: light)', color: 'cyan' },
+    { media: '(prefers-color-scheme: light)', color: 'light' },
     { media: '(prefers-color-scheme: dark)', color: 'black' },
   ],
 }
 export default function RootLayout({children}){
-  return (<html lang="en"><body className={inter.className}>
+  return (<html lang="en">
+        <UserProvider>
+    <body className={inter.className}>
         {children}
-        </body></html>)}
+        </body>
+        </UserProvider>
+        </html>)}

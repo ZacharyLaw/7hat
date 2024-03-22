@@ -21,9 +21,6 @@ import { v4 as uuidv4 } from 'uuid';
   const [loading, setLoading] = useState(false);
   const [msg, setMsg] = useState('');
   const [chats, setChat] = useState([]);
-  const handleKeyPress = (e) => {
-    if (e.key==='Enter'){addMsg();setMsg('');}
-  };
   useEffect(() => {
     const q = query(
       colletionRef,
@@ -59,7 +56,7 @@ import { v4 as uuidv4 } from 'uuid';
       <div className="inputBox">
         <input type="text" value={msg}
           onChange={e=>setMsg(e.target.value)}
-          onKeyDown={handleKeyPress}
+          onKeyDown={e=>e.key==='Enter'&&(addMsg(), setMsg(''))}
           placeholder="Msg"/>
         <button onClick={()=>addMsg()}>Submit</button>
       </div>
